@@ -2,22 +2,33 @@
 
 namespace Inheritance
 {
-    public class Animal
+    class Rectangle
     {
-        public void eat() { Console.WriteLine("Eating..."); }
-    }
-    public class Dog : Animal
-    {
-        public void bark() { Console.WriteLine("Barking..."); }
-    }
-    class TestInheritance2
-    {
-        public static void Main(string[] args)
+        //member variables
+        public double length;
+        public double width;
+
+        public double GetArea()
         {
-            Dog d1 = new Dog();
-            d1.eat();
-            d1.bark();
+            return length * width;
+        }
+        public void Display()
+        {
+            Console.WriteLine("Length: {0}", length);
+            Console.WriteLine("Width: {0}", width);
+            Console.WriteLine("Area: {0}", GetArea());
+        }
+    }//end class Rectangle
+
+    class ExecuteRectangle
+    {
+        static void Main(string[] args)
+        {
+            Rectangle r = new Rectangle();
+            r.length = 4.5;
+            r.width = 3.5;
+            r.Display();
+            Console.ReadLine();
         }
     }
-
 }
